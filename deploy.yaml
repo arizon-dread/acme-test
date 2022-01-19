@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: acme-test
+  name: acme-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: acme-test
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: acme-test
+    spec:
+      containers:
+      - image: image-registry.openshift-image-registry.svc:5000/bis-biskit/acme-pod:v1.0
+        imagePullPolicy: Always
+        name: acme-pod
+        resources: {}
+status: {}
