@@ -18,7 +18,7 @@ spec:
         app: acme-test
     spec:
       containers:
-      - image: image-registry.openshift-image-registry.svc:5000/bis-biskit/acme-pod:v1.0
+      - image: image-registry.openshift-image-registry.svc:5000/bis-nbr/acme-pod:v1.0
         imagePullPolicy: Always
         name: acme-pod
         resources: {}

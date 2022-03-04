@@ -2,10 +2,9 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   creationTimestamp: null
-  name: domibus-acme-test
-  namespace: bis-biskit
+  name: acme-test
 spec:
-  host: in.as4.biskit.biobanksverige.se
+  host: forskning.sbr.dev.biobanksverige.se
   path: /.well-known/acme-challenge
   port:
     targetPort: 5000
