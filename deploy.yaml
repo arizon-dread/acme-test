@@ -3,22 +3,22 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: acme-test
-  name: acme-test
+    app: acme-challenge-test
+  name: acme-challenge-test
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: acme-test
+      app: acme-challenge-test
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: acme-test
+        app: acme-challenge-test
     spec:
       containers:
-      - image: image-registry.openshift-image-registry.svc:5000/bis-nbr/acme-pod:v1.0
+      - image: docker.io/regionorebrolan/acme-challenge-test:v1.0
         imagePullPolicy: Always
         name: acme-pod
         resources: {}

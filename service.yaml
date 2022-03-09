@@ -11,6 +11,6 @@ spec:
     protocol: TCP
     targetPort: 5000
   selector:
-    app: acme-test
+    app: acme-challenge-test
 status:
   loadBalancer: {}
