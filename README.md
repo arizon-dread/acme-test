@@ -1,4 +1,4 @@
-## Nginx-pod to test that the networking setup; DNS, NAT, Load Balancing for letsencrypt is correct.
+## Nginx-image to test that the networking setup; DNS, NAT, Load Balancing for letsencrypt is correct.
 
 * Build with `docker build . -t registry/image:tag`
 * Login to the cluster or registry `docker login -u unset -p $(oc whoami -t) cluster.registry.domain.com`
