@@ -3,8 +3,8 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: acme-test
-  name: acme-test
+    app: acme-challenge-test
+  name: acme-challenge-test
 spec:
   ports:
   - port: 5000
