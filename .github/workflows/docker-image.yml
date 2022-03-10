@@ -13,7 +13,7 @@ jobs:
     
     steps:
     - name: tag
-      run: echo "tag=$(date +%s) >> $GITHUB_ENV"
+      run: echo "tag=$(date +%s)" >> $GITHUB_ENV
     - name: debug
       run: |
         echo "$tag"
