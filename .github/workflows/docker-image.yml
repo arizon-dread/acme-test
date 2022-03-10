@@ -9,16 +9,15 @@ on:
 jobs:
   
   build:
-    env:
-      TAG: ""
+  
     runs-on: ubuntu-latest
     
     steps:
-    - name: set tag
+    - name: tag
       run: echo "::set-output name=TAG::$(date %s)"
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag regionorebrolan/acme-challenge-test:$TAG
+      run: docker build . --file Dockerfile --tag regionorebrolan/acme-challenge-test:${{ steps.tag.outputs.TAG }}
     - name: docker login
       uses: docker/login-action@v1
       with:
