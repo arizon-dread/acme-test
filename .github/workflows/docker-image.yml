@@ -10,11 +10,12 @@ jobs:
   
   build:
     env:
-      TAG: $(date +%s)
+      TAG: ""
     runs-on: ubuntu-latest
     
     steps:
-      
+    - name: set tag
+      run: echo "::set-output name=TAG::$(date %s)"
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag regionorebrolan/acme-challenge-test:$TAG
