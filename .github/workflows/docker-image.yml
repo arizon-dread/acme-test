@@ -15,7 +15,12 @@ jobs:
     - name: tag
       run: echo "tag=$(date +%s) >> $GITHUB_ENV"
     - name: debug
-      run: echo "$tag"
+      run: |
+        echo "$tag"
+        echo $TAG
+        echo ${{ env.tag }}
+        echo "${{ env.tag }}"
+        echo "${{ tag }}"
       env:
         tag: "${{ env.tag }}"
     - uses: actions/checkout@v2
