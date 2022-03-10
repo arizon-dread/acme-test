@@ -13,14 +13,17 @@ jobs:
     
     steps:
     - name: tag
-      run: echo "TAG=$(date +%s) >> $GITHUB_ENV"
+      run: echo "tag=$(date +%s) >> $GITHUB_ENV"
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag regionorebrolan/acme-challenge-test:${{ env.TAG }}
+      run: docker build . --file Dockerfile --tag regionorebrolan/acme-challenge-test:$tag
     - name: docker login
       uses: docker/login-action@v1
       with:
         username: ${{ secrets.DOCKE_USERNAME }}
         password: ${{ secrets.DOCKER_BUILD_TOKEN }}
+        tag: ${{ env.tag }}
     - name: docker push
-      run: docker push regionorebrolan/acme-challenge-test:${{ env.TAG }}
+      run: docker push regionorebrolan/acme-challenge-test:$tag
+      env:
+        tag: ${{ env.tag }}
