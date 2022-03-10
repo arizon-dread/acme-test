@@ -15,12 +15,12 @@ jobs:
     - name: tag
       run: echo "tag=$(date +%s) >> $GITHUB_ENV"
     - name: debug
-      run: echo ${{ env.tag }}
+      run: echo "${{ env.tag }}"
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag regionorebrolan/acme-challenge-test:$tag
       env:
-        tag: ${{ env.tag }}
+        tag: "${{ env.tag }}"
     - name: docker login
       uses: docker/login-action@v1
       with:
@@ -29,4 +29,4 @@ jobs:
     - name: docker push
       run: docker push regionorebrolan/acme-challenge-test:$tag
       env:
-        tag: ${{ env.tag }}
+        tag: "${{ env.tag }}"
