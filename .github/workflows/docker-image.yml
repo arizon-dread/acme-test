@@ -14,7 +14,7 @@ jobs:
     
     steps:
     - name: tag
-      run: echo "::set-output name=TAG::$(date %s)"
+      run: echo "::set-output name=TAG::$(date +%s)"
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag regionorebrolan/acme-challenge-test:${{ steps.tag.outputs.TAG }}
