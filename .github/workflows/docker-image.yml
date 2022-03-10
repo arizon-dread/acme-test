@@ -19,9 +19,7 @@ jobs:
         echo "$tag"
         echo $TAG
         echo ${{ env.tag }}
-        echo "${{ env.tag }}"
-        echo "${{ tag }}"
-        
+        echo "${{ env.tag }}"        
       env:
         tag: "${{ env.tag }}"
     - uses: actions/checkout@v2
