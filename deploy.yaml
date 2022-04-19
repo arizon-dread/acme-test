@@ -20,6 +20,9 @@ spec:
       containers:
       - image: docker.io/regionorebrolan/acme-challenge-test:v1.0
         imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+          protocol: TCP
         name: acme-pod
         resources: {}
 status: {}

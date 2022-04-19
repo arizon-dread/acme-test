@@ -7,7 +7,7 @@ metadata:
   creationTimeStamp: null
 spec:
   rules:
-  - host: acme-challenge-test.localhost
+  - host: id-development.regionorebrolan.se
     http:
       paths:
       - backend:
@@ -16,5 +16,5 @@ spec:
             port:
               number: 5000
         path: /.well-known/acme-challenge/asdf1234
-        pathType: Exact
+        pathType: ImplementationSpecific
 status: {}
